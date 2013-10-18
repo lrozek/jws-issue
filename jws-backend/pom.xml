@@ -8,5 +8,47 @@
     </parent>
     <artifactId>jws-backend</artifactId>
     <packaging>war</packaging>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.mojo.webstart</groupId>
+            <artifactId>webstart-jnlp-servlet</artifactId>
+            <version>1.0-6.0.02_ea_b02.2</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>webstart-maven-plugin</artifactId>
+                <version>1.0-beta-3</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>jnlp-download-servlet</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jnlpFiles>
+                        <jnlpFile>
+                            <templateFilename>launch.xml</templateFilename>
+                            <jarResources>
+                                <jarResource>
+                                    <groupId>${project.parent.groupId}</groupId>
+                                    <artifactId>jws-client</artifactId>
+                                    <version>${project.parent.version}</version>
+                                    <mainClass>pl.lrozek.jws.client.main.Main</mainClass>
+                                </jarResource>
+                            </jarResources>
+                        </jnlpFile>
+                    </jnlpFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

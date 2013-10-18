@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="7.0" codebase="$$codebase" href="$$name">
+    <information>
+        <title>jws-backend</title>
+        <vendor>lrozek</vendor>
+    </information>
+    <update check="always" policy="always" />
+    <resources>
+        <j2se version="1.5+" />
+        $dependencies
+        <property name="custom_property" value="ifYouSeeThisValueThanJwsPickedUpThisProperty" />
+    </resources>
+    <application-desc main-class="$mainClass" />
+</jnlp>
+
