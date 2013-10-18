@@ -1,11 +1,36 @@
-jws-issue
-=========
-
-bug reproduction for java web start
+java web start fails setting system property under jdk 1.7.0_45-b18 via property element in jnlp file
 
 
-bug description
-java web start when runs against 1.7.0_45 fails setting jvm properties via resources/property elements in jnlp description (http://docs.oracle.com/javase/7/docs/technotes/guides/javaws/developersguide/syntax.html#resources)
+
+WIN 7 PROFESSIONAL Service Pack 1 64 bit
+3.0.0-32-generic #51-Ubuntu SMP Thu Mar 21 15:50:59 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+
+
+java version "1.7.0_45"
+Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
+Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)
+
+
+
+java web start when runs against 1.7.0_45 fails setting jvm properties via resources/property elements in jnlp file (http://docs.oracle.com/javase/7/docs/technotes/guides/javaws/developersguide/syntax.html#resources)
+
+
+java version "1.7.0_40"
+Java(TM) SE Runtime Environment (build 1.7.0_40-b43)
+Java HotSpot(TM) 64-Bit Server VM (build 24.0-b56, mixed mode)
+
+
+System.getProperty( "custom_property" ) should give "ifYouSeeThisValueThanJwsPickedUpThisProperty"
+
+System.getProperty( "custom_property" ) gives null
+
+
+
+self contained project is available under: https://github.com/lrozek/jws-issue
+archive containing entire project: https://github.com/lrozek/jws-issue/archive/master.zip
+optionaly via git: git clone https://github.com/lrozek/jws-issue.git
+for more details please refer also to https://github.com/lrozek/jws-issue/blob/master/README.md
+
 
 preriquisites:
 - jdk 1.7.0_40 (where it works)
