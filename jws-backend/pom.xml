@@ -33,6 +33,29 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <sign>
+                        <keystore>${basedir}/keystore</keystore>
+                        <keypass>password</keypass>
+                        <storepass>password</storepass>
+                        <alias>EmbeddedTomcatWebstart</alias>
+
+
+                        <dnameCn>EmbeddedTomcatWebstart</dnameCn>
+                        <dnameOu>Organisation Unit</dnameOu>
+                        <dnameO>Organisation</dnameO>
+                        <dnameL>Location</dnameL>
+                        <dnameSt>State</dnameSt>
+                        <dnameC>Country</dnameC>
+
+                        <verify>true</verify>
+
+                        <keystoreConfig>
+                            <delete>true</delete>
+                            <gen>true</gen>
+                        </keystoreConfig>
+                    </sign>
+
+
                     <jnlpFiles>
                         <jnlpFile>
                             <templateFilename>launch.xml</templateFilename>

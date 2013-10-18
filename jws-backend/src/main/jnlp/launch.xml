@@ -4,6 +4,9 @@
         <title>jws-backend</title>
         <vendor>lrozek</vendor>
     </information>
+    <security>
+        <all-permissions />
+    </security>
     <update check="always" policy="always" />
     <resources>
         <j2se version="1.5+" />
