@@ -32,6 +32,7 @@ public class MainWindow extends JFrame {
 
     public void init() {
         setSize();
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
         initComponents();
         configureLayout();
     }
